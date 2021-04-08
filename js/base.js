@@ -24,6 +24,30 @@ export class API extends mix(OAuth2API).with(ModelAPI) {
         await load();
     }
 
+    async build(method, url, options = {}) {
+        await super.build(method, url, options);
+        options.params = options.params !== undefined ? options.params : {};
+        options.kwargs = options.kwargs !== undefined ? options.kwargs : {};
+        const auth = options.kwargs.auth === undefined ? true : options.kwargs.auth;
+        delete options.kwargs.auth;
+        if (auth) options.params.sid = await this.getSessionId();
+    }
+
+    async getSessionId() {
+        if (this.sessionId) return this.sessionId;
+        return await this.oauthLogin();
+    }
+
+    async oauthLogin() {
+        const url = `${this.baseUrl}admin/oauth/login`;
+        const response = await this.get(url, { auth: false, token: true });
+        this.username = response.username || null;
+        this.sessionId = response.sessionId || null;
+        this.tokens = response.tokens || null;
+        this.trigger("auth", response);
+        return this.sessionId;
+    }
+
     async ping() {
         const url = `${this.baseUrl}api/admin/ping`;
         const response = await this.get(url, { auth: false });

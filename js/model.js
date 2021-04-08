@@ -6,9 +6,9 @@ export const ModelAPI = superclass =>
             return response;
         }
 
-        async getModel(model) {
+        async getModel(model, options = {}) {
             const url = `${this.baseUrl}api/admin/models/${model}`;
-            const response = await this.get(url);
+            const response = await this.get(url, options);
             return response;
         }
 
