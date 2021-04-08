@@ -1,0 +1,67 @@
+{
+    "name": "appier-admin-api",
+    "version": "0.3.0",
+    "description": "The Appier Admin API client",
+    "keywords": [
+        "api",
+        "client",
+        "admin",
+        "appier",
+        "hive"
+    ],
+    "homepage": "https://github.com/hivesolutions/appier_admin_api_js#readme",
+    "bugs": {
+        "url": "https://github.com/hivesolutions/appier_admin_api_js/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/hivesolutions/appier_admin_api_js.git"
+    },
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Hive Solutions",
+        "url": "https://www.hive.pt"
+    },
+    "main": "dist/appier-admin.cjs.js",
+    "unpkg": "dist/appier-admin.umd.js",
+    "module": "dist/appier-admin.esm.js",
+    "browser": "dist/appier-admin.umd.js",
+    "files": [
+        "LICENSE",
+        "dist/**/*",
+        "res/**/*",
+        "js/**/*.js",
+        "test/**/*.js"
+    ],
+    "scripts": {
+        "build": "rollup -c",
+        "example": "node examples/simple.js",
+        "lint": "eslint rollup.config.js \"./{js,test}/**/*.{js,json}\"",
+        "lint-fix": "eslint rollup.config.js \"./{js,test}/**/*.{js,json}\" --fix",
+        "prettier": "prettier rollup.config.js \"./*.{js,json}\" \"./{js,test}/**/*.{js,json}\" --write",
+        "pretty": "npm run prettier && npm run lint-fix",
+        "test": "mocha --recursive",
+        "upgrade": "npx sort-package-json && ncu -u",
+        "watch": "rollup -c -w"
+    },
+    "dependencies": {
+        "yonius": "^0.7.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.13.14",
+        "@babel/preset-env": "^7.13.12",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^18.0.0",
+        "@rollup/plugin-node-resolve": "^11.2.1",
+        "eslint": "^7.23.0",
+        "eslint-config-hive": "^0.5.3",
+        "mocha": "^8.3.2",
+        "mocha-cli": "^1.0.1",
+        "npm-check-updates": "^11.3.0",
+        "prettier": "^2.2.1",
+        "prettier-config-hive": "^0.1.7",
+        "rollup": "^2.44.0",
+        "rollup-plugin-node-polyfills": "^0.2.1",
+        "sort-package-json": "^1.49.0"
+    }
+}
