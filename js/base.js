@@ -24,6 +24,12 @@ export class API extends mix(OAuth2API).with(ModelAPI) {
         await load();
     }
 
+    async ping() {
+        const url = `${this.baseUrl}api/admin/ping`;
+        const response = await this.get(url, { auth: false });
+        return response;
+    }
+
     get oauthTypes() {
         return ["param"];
     }
