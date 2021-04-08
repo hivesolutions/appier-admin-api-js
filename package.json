@@ -1,6 +1,6 @@
 {
     "name": "appier-admin-api",
-    "version": "0.3.0",
+    "version": "0.2.0",
     "description": "The Appier Admin API client",
     "keywords": [
         "api",
