@@ -9,13 +9,13 @@
         "appier",
         "hive"
     ],
-    "homepage": "https://github.com/hivesolutions/appier_admin_api_js#readme",
+    "homepage": "https://github.com/hivesolutions/appier-admin-api-js#readme",
     "bugs": {
-        "url": "https://github.com/hivesolutions/appier_admin_api_js/issues"
+        "url": "https://github.com/hivesolutions/appier-admin-api-js/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/hivesolutions/appier_admin_api_js.git"
+        "url": "git+https://github.com/hivesolutions/appier-admin-api-js.git"
     },
     "license": "Apache-2.0",
     "author": {
