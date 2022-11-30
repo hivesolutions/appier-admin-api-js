@@ -13,11 +13,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-* Renamed repository name using '-' instead of '_'
+*
 
 ### Fixed
 
 *
+
+## [0.3.1] - 2022-11-30
+
+### Changed
+
+* Renamed repository name using '-' instead of '_'
+
+## [0.3.0] - 2022-11-30
+
+### Fixed
+
+* Version numbering
 
 ## [0.2.1] - 2021-04-08
 
